@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Basic_Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="300">
     <Grid>
-        
+        <Button Content="1" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
+        <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="12,10,0,0"/>
+
     </Grid>
 </Window>
