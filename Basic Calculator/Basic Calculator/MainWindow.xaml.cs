@@ -20,7 +20,7 @@ namespace Basic_Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public List<string> memory = new List<string>(); //stores everything the user types in
 
         public MainWindow()
         {
@@ -79,7 +79,12 @@ namespace Basic_Calculator
 
         private void Minus_Click(object sender, RoutedEventArgs e)
         {
-
+            if(number_box.Text != "")
+            {
+                memory_block.Text += number_box.Text;
+                number_box.Text = "";
+                memory_block.Text += " - ";
+            }
         }
 
         private void Divide_Click(object sender, RoutedEventArgs e)
