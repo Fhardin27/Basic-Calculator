@@ -29,5 +29,50 @@ namespace Basic_Calculator
         {
             number_box.Text += '1';
         }
+
+        private void Zero_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Two_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Three_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Four_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Five_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Six_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Seven_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Eight_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Nine_click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

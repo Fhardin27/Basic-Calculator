@@ -8,18 +8,16 @@
         Title="MainWindow" Height="450" Width="300">
     <Grid>
         <Button Content="0" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Zero_click"/>
-        <Button Content="1" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
-        <Button Content="6" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Six_click"/>
-        <Button Content="7" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Seven_click"/>
-        <Button Content="8" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Eight_click"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Nine_click"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="62,103,0,0" VerticalAlignment="Top" Width="26" Height="25" FontSize="15" Click="One_click"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" Width="26" Height="25" FontSize="15" Click="Six_click"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Seven_click" RenderTransformOrigin="8.77,2"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="42,215,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Eight_click"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="146,225,0,0" VerticalAlignment="Top" Width="26" Height="25" FontSize="15" Click="Nine_click" RenderTransformOrigin="0.5,0.5"/>
         <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="12,10,0,0"/>
-        <Button Content="1" HorizontalAlignment="Left" Margin="42,98,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
-        <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Margin="42,31,0,0"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="111,98,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="185,98,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
-        <Button Content="4" HorizontalAlignment="Left" Margin="42,140,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="111,140,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="111,98,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Two_click"/>
+        <Button Content="3" HorizontalAlignment="Left" Margin="185,98,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Three_click"/>
+        <Button Content="4" HorizontalAlignment="Left" Margin="42,140,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Four_click"/>
+        <Button Content="5" HorizontalAlignment="Left" Margin="111,140,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Five_click"/>
 
     </Grid>
 </Window>
