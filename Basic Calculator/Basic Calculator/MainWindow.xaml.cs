@@ -28,6 +28,7 @@ namespace Basic_Calculator
         private void One_click(object sender, RoutedEventArgs e)
         {
             number_box.Text += '1';
+            MessageBox.Show("Big Cock");
         }
     }
 }
