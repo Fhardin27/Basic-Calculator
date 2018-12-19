@@ -139,5 +139,12 @@ namespace Basic_Calculator
                 memory_block.Text += " * ";
             }
         }
+
+        private void CLR_click(object sender, RoutedEventArgs e)
+        {
+            memory = new List<string>();
+            memory_block.Text = "";
+            number_box.Text = "";
+        }
     }
 }
