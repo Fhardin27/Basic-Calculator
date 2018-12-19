@@ -94,7 +94,12 @@ namespace Basic_Calculator
         
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
+            if (number_box.Text != "")
+            {
+                memory_block.Text += number_box.Text;
+                number_box.Text = "";
+                memory_block.Text += " + ";
+            }
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
@@ -104,7 +109,12 @@ namespace Basic_Calculator
 
         private void Times_Click(object sender, RoutedEventArgs e)
         {
-
+            if(number_box.Text != "")
+            {
+                memory_block.Text += number_box.Text;
+                number_box.Text = "";
+                memory_block.Text += " * ";
+            }
         }
     }
 }
