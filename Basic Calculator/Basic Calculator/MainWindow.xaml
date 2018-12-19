@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="300">
     <Grid>
+        <Button Content="0" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Zero_click"/>
         <Button Content="1" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="One_click"/>
+        <Button Content="6" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Six_click"/>
+        <Button Content="7" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Seven_click"/>
+        <Button Content="8" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Eight_click"/>
+        <Button Content="9" HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top" Width="25" Height="25" FontSize="15" Click="Nine_click"/>
         <TextBox x:Name="number_box" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="12,10,0,0"/>
 
     </Grid>
