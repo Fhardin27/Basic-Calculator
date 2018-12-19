@@ -20,11 +20,11 @@
         <Button Content="3" HorizontalAlignment="Left" Margin="140,196,0,0" VerticalAlignment="Top" Width="60" Height="60" FontSize="30" Click="Three_click"/>
         <Button Content="4" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Width="60" Height="60" FontSize="30" Click="Four_click"/>
         <Button Content="5" HorizontalAlignment="Left" Margin="75,131,0,0" VerticalAlignment="Top" Width="60" Height="60" FontSize="30" Click="Five_click"/>
-        <Button Content="+" FontSize="30" HorizontalAlignment="Left" Margin="205,66,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
+        <Button Content="+" FontSize="30" HorizontalAlignment="Left" Margin="205,66,0,0" VerticalAlignment="Top" Width="60" Height="60" Click="Add_Click"/>
         <Button Content="-" FontSize="30" HorizontalAlignment="Left" Margin="205,131,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
         <Button Content="/" FontSize="30"  HorizontalAlignment="Left" Margin="205,196,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="Enter" FontSize="20" HorizontalAlignment="Left" Margin="140,261,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
-        <Button Content="*" FontSize="30" HorizontalAlignment="Left" Margin="205,261,0,0" VerticalAlignment="Top" Width="60" Height="60"/>
+        <Button Content="Enter" FontSize="20" HorizontalAlignment="Left" Margin="140,261,0,0" VerticalAlignment="Top" Width="60" Height="60" Click="Enter_Click"/>
+        <Button Content="*" FontSize="30" HorizontalAlignment="Left" Margin="205,261,0,0" VerticalAlignment="Top" Width="60" Height="60" Click="Times_Click"/>
 
     </Grid>
 </Window>

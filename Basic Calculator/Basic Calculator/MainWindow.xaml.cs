@@ -20,6 +20,8 @@ namespace Basic_Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -71,6 +73,21 @@ namespace Basic_Calculator
         }
 
         private void Nine_click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Enter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Times_Click(object sender, RoutedEventArgs e)
         {
 
         }
