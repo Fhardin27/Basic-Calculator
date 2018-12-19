@@ -21,6 +21,7 @@ namespace Basic_Calculator
     public partial class MainWindow : Window
     {
         public List<string> memory = new List<string>(); //stores everything the user types in
+        public double answer = new double(); //the answer
 
         public MainWindow()
         {
@@ -82,6 +83,8 @@ namespace Basic_Calculator
             if(number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
+                memory.Add(number_box.Text);
+                memory.Add("-");
                 number_box.Text = "";
                 memory_block.Text += " - ";
             }
@@ -92,6 +95,8 @@ namespace Basic_Calculator
             if (number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
+                memory.Add(number_box.Text);
+                memory.Add("/");
                 number_box.Text = "";
                 memory_block.Text += " / ";
             }
@@ -102,6 +107,8 @@ namespace Basic_Calculator
             if (number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
+                memory.Add(number_box.Text);
+                memory.Add("+");
                 number_box.Text = "";
                 memory_block.Text += " + ";
             }
@@ -109,7 +116,16 @@ namespace Basic_Calculator
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-
+            if (number_box.Text == "")
+            {
+                return;
+            }
+            memory.Add(number_box.Text);
+            memory_block.Text += number_box.Text;
+            if (memory != null)
+            {
+                answer = Convert.ToDouble(memory[0]);
+            }
         }
 
         private void Times_Click(object sender, RoutedEventArgs e)
@@ -117,6 +133,8 @@ namespace Basic_Calculator
             if(number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
+                memory.Add(number_box.Text);
+                memory.Add("*");
                 number_box.Text = "";
                 memory_block.Text += " * ";
             }
