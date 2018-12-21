@@ -22,6 +22,7 @@ namespace Basic_Calculator
     {
         public List<string> memory = new List<string>(); //stores everything the user types in
         public double answer = new double(); //the answer
+        private bool is_clicked;
 
         public MainWindow()
         {
@@ -30,51 +31,101 @@ namespace Basic_Calculator
 
         private void One_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '1';
         }
 
         private void Zero_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '0';
         }
 
         private void Two_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '2';
         }
 
         private void Three_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '3';
         }
 
         private void Four_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '4';
         }
 
         private void Five_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '5';
         }
 
         private void Six_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '6';
         }
 
         private void Seven_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '7';
         }
 
         private void Eight_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }
             number_box.Text += '8';
         }
 
         private void Nine_click(object sender, RoutedEventArgs e)
         {
+            if (is_clicked == true)
+            {
+                number_box.Text = "";
+                is_clicked = false;
+            }                
             number_box.Text += '9';
         }
 
@@ -85,8 +136,8 @@ namespace Basic_Calculator
                 memory_block.Text += number_box.Text;
                 memory.Add(number_box.Text);
                 memory.Add("-");
-                number_box.Text = "";
                 memory_block.Text += " - ";
+                is_clicked = true;
             }
         }
 
@@ -97,7 +148,7 @@ namespace Basic_Calculator
                 memory_block.Text += number_box.Text;
                 memory.Add(number_box.Text);
                 memory.Add("/");
-                number_box.Text = "";
+                is_clicked = true;
                 memory_block.Text += " / ";
             }
         }
@@ -109,7 +160,7 @@ namespace Basic_Calculator
                 memory_block.Text += number_box.Text;
                 memory.Add(number_box.Text);
                 memory.Add("+");
-                number_box.Text = "";
+                is_clicked = true;
                 memory_block.Text += " + ";
             }
         }
@@ -126,6 +177,7 @@ namespace Basic_Calculator
             {
                 answer = Convert.ToDouble(memory[0]);
             }
+            //calculate()
         }
 
         private void Times_Click(object sender, RoutedEventArgs e)
@@ -135,7 +187,7 @@ namespace Basic_Calculator
                 memory_block.Text += number_box.Text;
                 memory.Add(number_box.Text);
                 memory.Add("*");
-                number_box.Text = "";
+                is_clicked = true;
                 memory_block.Text += " * ";
             }
         }
@@ -145,6 +197,17 @@ namespace Basic_Calculator
             memory = new List<string>();
             memory_block.Text = "";
             number_box.Text = "";
+            is_clicked = false;
+        }
+
+        private void calculate()
+        {
+            //iterate through each element in the list and detetmine if it is a number or an operation to be performed
+        }
+
+        private void order()
+        {
+            //somehow need to reorder the list into the correct order of operations before calling the calculate function
         }
     }
 }
