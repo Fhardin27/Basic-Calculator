@@ -22,7 +22,8 @@ namespace Basic_Calculator
     {
         public Queue<string> memory = new Queue<string>(); //stores everything the user types in
         public double answer = new double(); //the answer
-        private bool is_clicked;
+        private bool is_clicked = false;
+        private bool enter_clicked = false;
 
         public MainWindow()
         {
@@ -36,6 +37,11 @@ namespace Basic_Calculator
                 number_box.Text = "";
                 is_clicked = false;
             }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
+            }
             number_box.Text += '1';
         }
 
@@ -45,6 +51,11 @@ namespace Basic_Calculator
             {
                 number_box.Text = "";
                 is_clicked = false;
+            }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
             }
             number_box.Text += '0';
         }
@@ -56,6 +67,11 @@ namespace Basic_Calculator
                 number_box.Text = "";
                 is_clicked = false;
             }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
+            }
             number_box.Text += '2';
         }
 
@@ -65,6 +81,11 @@ namespace Basic_Calculator
             {
                 number_box.Text = "";
                 is_clicked = false;
+            }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
             }
             number_box.Text += '3';
         }
@@ -76,6 +97,11 @@ namespace Basic_Calculator
                 number_box.Text = "";
                 is_clicked = false;
             }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
+            }
             number_box.Text += '4';
         }
 
@@ -85,6 +111,11 @@ namespace Basic_Calculator
             {
                 number_box.Text = "";
                 is_clicked = false;
+            }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
             }
             number_box.Text += '5';
         }
@@ -96,6 +127,11 @@ namespace Basic_Calculator
                 number_box.Text = "";
                 is_clicked = false;
             }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
+            }
             number_box.Text += '6';
         }
 
@@ -105,6 +141,11 @@ namespace Basic_Calculator
             {
                 number_box.Text = "";
                 is_clicked = false;
+            }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
             }
             number_box.Text += '7';
         }
@@ -116,6 +157,11 @@ namespace Basic_Calculator
                 number_box.Text = "";
                 is_clicked = false;
             }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
+            }
             number_box.Text += '8';
         }
 
@@ -125,7 +171,12 @@ namespace Basic_Calculator
             {
                 number_box.Text = "";
                 is_clicked = false;
-            }                
+            }
+            else if (enter_clicked == true)
+            {
+                CLR_click(sender, e);
+                enter_clicked = false;
+            }
             number_box.Text += '9';
         }
 
@@ -138,6 +189,13 @@ namespace Basic_Calculator
                 memory.Enqueue("-");
                 memory_block.Text += " - ";
                 is_clicked = true;
+
+                if (enter_clicked is true)
+                {
+                    enter_clicked = false;
+                    memory_block.Text = Convert.ToString(answer);
+                    memory_block.Text += " - ";
+                }
             }
         }
 
@@ -150,6 +208,13 @@ namespace Basic_Calculator
                 memory.Enqueue("/");
                 is_clicked = true;
                 memory_block.Text += " / ";
+
+                if (enter_clicked is true)
+                {
+                    enter_clicked = false;
+                    memory_block.Text = Convert.ToString(answer);
+                    memory_block.Text += " / ";
+                }
             }
         }
         
@@ -162,7 +227,15 @@ namespace Basic_Calculator
                 memory.Enqueue("+");
                 is_clicked = true;
                 memory_block.Text += " + ";
+
+                if (enter_clicked is true)
+                {
+                    enter_clicked = false;
+                    memory_block.Text = Convert.ToString(answer);
+                    memory_block.Text += " + ";
+                }
             }
+
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
@@ -178,6 +251,8 @@ namespace Basic_Calculator
                 return;
             }
             calculate();
+            enter_clicked = true;
+            is_clicked = false;
         }
 
         private void Times_Click(object sender, RoutedEventArgs e)
@@ -189,6 +264,13 @@ namespace Basic_Calculator
                 memory.Enqueue("*");
                 is_clicked = true;
                 memory_block.Text += " * ";
+
+                if (enter_clicked is true)
+                {
+                    enter_clicked = false;
+                    memory_block.Text = Convert.ToString(answer);
+                    memory_block.Text += " * ";
+                }
             }
         }
 
@@ -198,6 +280,8 @@ namespace Basic_Calculator
             memory_block.Text = "";
             number_box.Text = "";
             is_clicked = false;
+            enter_clicked = false;
+            answer = 0;
         }
 
         private void calculate()
