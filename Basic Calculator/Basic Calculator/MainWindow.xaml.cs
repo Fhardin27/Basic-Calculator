@@ -20,7 +20,7 @@ namespace Basic_Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<string> memory = new List<string>(); //stores everything the user types in
+        public Queue<string> memory = new Queue<string>(); //stores everything the user types in
         public double answer = new double(); //the answer
         private bool is_clicked;
 
@@ -134,8 +134,8 @@ namespace Basic_Calculator
             if(number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
-                memory.Add(number_box.Text);
-                memory.Add("-");
+                memory.Enqueue(number_box.Text);
+                memory.Enqueue("-");
                 memory_block.Text += " - ";
                 is_clicked = true;
             }
@@ -146,8 +146,8 @@ namespace Basic_Calculator
             if (number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
-                memory.Add(number_box.Text);
-                memory.Add("/");
+                memory.Enqueue(number_box.Text);
+                memory.Enqueue("/");
                 is_clicked = true;
                 memory_block.Text += " / ";
             }
@@ -158,8 +158,8 @@ namespace Basic_Calculator
             if (number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
-                memory.Add(number_box.Text);
-                memory.Add("+");
+                memory.Enqueue(number_box.Text);
+                memory.Enqueue("+");
                 is_clicked = true;
                 memory_block.Text += " + ";
             }
@@ -171,13 +171,13 @@ namespace Basic_Calculator
             {
                 return;
             }
-            memory.Add(number_box.Text);
+            memory.Enqueue(number_box.Text);
             memory_block.Text += number_box.Text;
-            if (memory != null)
+            if (memory == null)
             {
-                answer = Convert.ToDouble(memory[0]);
+                return;
             }
-            //calculate()
+            calculate();
         }
 
         private void Times_Click(object sender, RoutedEventArgs e)
@@ -185,8 +185,8 @@ namespace Basic_Calculator
             if(number_box.Text != "")
             {
                 memory_block.Text += number_box.Text;
-                memory.Add(number_box.Text);
-                memory.Add("*");
+                memory.Enqueue(number_box.Text);
+                memory.Enqueue("*");
                 is_clicked = true;
                 memory_block.Text += " * ";
             }
@@ -194,7 +194,7 @@ namespace Basic_Calculator
 
         private void CLR_click(object sender, RoutedEventArgs e)
         {
-            memory = new List<string>();
+            memory = new Queue<string>();
             memory_block.Text = "";
             number_box.Text = "";
             is_clicked = false;
@@ -202,7 +202,32 @@ namespace Basic_Calculator
 
         private void calculate()
         {
-            //iterate through each element in the list and detetmine if it is a number or an operation to be performed
+            answer = Convert.ToDouble(memory.Dequeue());
+
+            while (memory.Count != 0)
+            {
+                char op = Convert.ToChar(memory.Dequeue());
+
+                switch(op)
+                {
+                    case '+':
+                        answer += Convert.ToDouble(memory.Dequeue());
+                        break;
+                    case '-':
+                        answer -= Convert.ToDouble(memory.Dequeue());
+                        break;
+                    case '/':
+                        answer /= Convert.ToDouble(memory.Dequeue());
+                        break;
+                    case '*':
+                        answer *= Convert.ToDouble(memory.Dequeue());
+                        break;
+                    default:
+                        return;
+                }
+            }
+
+            number_box.Text = Convert.ToString(answer);
         }
 
         private void order()
